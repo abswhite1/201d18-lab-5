@@ -8,6 +8,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
+
 function sum(a,b){ //eslint-disable-line
   var result = a + b;
   var message = 'The sum of ' + a + ' and ' + b
@@ -53,11 +54,33 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
+  var sumResult = sum(a,b);
+  console.log(sumResult[0]);
+  console.log(sumResult[1]);
 
+  var sumResult2 = sum(sumResult[0], c);
+  console.log(sumResult2[0]);
+  console.log(sumResult2[1]);
+  console.log(sumResult2[2]);
+
+  var multiplyResult = multiply(a,b);
+  console.log(multiplyResult[0]);
+  console.log(multiplyResult[1]);
+
+  var multiplyResult2 = multiply(multiplyResult[0],c);
+  console.log(multiplyResult2[0]);
+  console.log(multiplyResult2[1]);
+
+  var message1 = a + ' and ' + b + ' and ' + c + ' sum to ' + sumResult2[0] + '.';
+  var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyResult2[0] + '.';
+
+  console.log(message1);
+  console.log(message2);
+  return [sumResult2[0], multiplyResult2[0], message1, message2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
